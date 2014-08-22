@@ -1,14 +1,14 @@
 
-	 ██▓     ▄▄▄       ██▒   █▓ ▄▄▄       ██▓     ▄▄▄       ███▄ ▄███▓ ██▓███
-	▓██▒    ▒████▄    ▓██░   █▒▒████▄    ▓██▒    ▒████▄    ▓██▒▀█▀ ██▒▓██░  ██▒
-	▒██░    ▒██  ▀█▄   ▓██  █▒░▒██  ▀█▄  ▒██░    ▒██  ▀█▄  ▓██    ▓██░▓██░ ██▓▒
-	▒██░    ░██▄▄▄▄██   ▒██ █░░░██▄▄▄▄██ ▒██░    ░██▄▄▄▄██ ▒██    ▒██ ▒██▄█▓▒ ▒
-	░██████▒ ▓█   ▓██▒   ▒▀█░   ▓█   ▓██▒░██████▒ ▓█   ▓██▒▒██▒   ░██▒▒██▒ ░  ░
-	░ ▒░▓  ░ ▒▒   ▓▒█░   ░ ▐░   ▒▒   ▓▒█░░ ▒░▓  ░ ▒▒   ▓▒█░░ ▒░   ░  ░▒▓▒░ ░  ░
-	░ ░ ▒  ░  ▒   ▒▒ ░   ░ ░░    ▒   ▒▒ ░░ ░ ▒  ░  ▒   ▒▒ ░░  ░      ░░▒ ░
-	  ░ ░     ░   ▒        ░░    ░   ▒     ░ ░     ░   ▒   ░      ░   ░░
-		░  ░      ░  ░      ░        ░  ░    ░  ░      ░  ░       ░
-						   ░
+ ██▓     ▄▄▄       ██▒   █▓ ▄▄▄       ██▓     ▄▄▄       ███▄ ▄███▓ ██▓███
+▓██▒    ▒████▄    ▓██░   █▒▒████▄    ▓██▒    ▒████▄    ▓██▒▀█▀ ██▒▓██░  ██▒
+▒██░    ▒██  ▀█▄   ▓██  █▒░▒██  ▀█▄  ▒██░    ▒██  ▀█▄  ▓██    ▓██░▓██░ ██▓▒
+▒██░    ░██▄▄▄▄██   ▒██ █░░░██▄▄▄▄██ ▒██░    ░██▄▄▄▄██ ▒██    ▒██ ▒██▄█▓▒ ▒
+░██████▒ ▓█   ▓██▒   ▒▀█░   ▓█   ▓██▒░██████▒ ▓█   ▓██▒▒██▒   ░██▒▒██▒ ░  ░
+░ ▒░▓  ░ ▒▒   ▓▒█░   ░ ▐░   ▒▒   ▓▒█░░ ▒░▓  ░ ▒▒   ▓▒█░░ ▒░   ░  ░▒▓▒░ ░  ░
+░ ░ ▒  ░  ▒   ▒▒ ░   ░ ░░    ▒   ▒▒ ░░ ░ ▒  ░  ▒   ▒▒ ░░  ░      ░░▒ ░
+  ░ ░     ░   ▒        ░░    ░   ▒     ░ ░     ░   ▒   ░      ░   ░░
+    ░  ░      ░  ░      ░        ░  ░    ░  ░      ░  ░       ░
+                       ░
 
 LavaPasswordFactory is a simple little script for both generating password lists for online and offline attacks as well as cleaning existing password lists based on given password policies. The script can be invoked in one of two modes of operation: generation mode and cleaning mode.
 
@@ -34,101 +34,101 @@ In cleaning mode the script will read passwords from an input file, validate tho
 
 **Generic help:**
 
-usage: LavaPasswordFactory.py [-h]
-							  [--log-level <DEBUG|INFO|WARNING|ERROR|CRITICAL>]
-							  {generate,clean} ...
+    usage: LavaPasswordFactory.py [-h]
+                                  [--log-level <DEBUG|INFO|WARNING|ERROR|CRITICAL>]
+                                  {generate,clean} ...
 
-LavaPasswordFactory - for all your password list
+    LavaPasswordFactory - for all your password list
 
-positional arguments:
-  {generate,clean}      sub-command help
-	generate            generate help
-	clean               clean help
+    positional arguments:
+      {generate,clean}      sub-command help
+        generate            generate help
+        clean               clean help
 
-optional arguments:
-  -h, --help            show this help message and exit
-  --log-level <DEBUG|INFO|WARNING|ERROR|CRITICAL>
-						The log message level to receive when running the
-						script. Validvalues are DEBUG, INFO, WARNING, ERROR,
-						CRITICAL.
+    optional arguments:
+      -h, --help            show this help message and exit
+      --log-level <DEBUG|INFO|WARNING|ERROR|CRITICAL>
+                            The log message level to receive when running the
+                            script. Validvalues are DEBUG, INFO, WARNING, ERROR,
+                            CRITICAL.
 
 **Generation mode help:**
 
-usage: LavaPasswordFactory.py generate [-h] [--special-chars <chars>]
-									   [--illegal-chars <chars>]
-									   [--max-special <num>]
-									   [--min-special <num>]
-									   [--max-caps <num>] [--min-caps <num>]
-									   [--is-offline] [--min-length <len>]
-									   [--max-length <len>] --words
-									   <word_list> --output-file <file_path>
+    usage: LavaPasswordFactory.py generate [-h] [--special-chars <chars>]
+                                           [--illegal-chars <chars>]
+                                           [--max-special <num>]
+                                           [--min-special <num>]
+                                           [--max-caps <num>] [--min-caps <num>]
+                                           [--is-offline] [--min-length <len>]
+                                           [--max-length <len>] --words
+                                           <word_list> --output-file <file_path>
 
-optional arguments:
-  -h, --help            show this help message and exit
-  --special-chars <chars>
-						The characters to be considered as 'special
-						characters' for thepurpose of filtering out ineligible
-						passwords.
-  --illegal-chars <chars>
-						Characters that are not allowed in the generated
-						passwords.
-  --max-special <num>   The maximum number of special characters per generated
-						password.
-  --min-special <num>   The minimum number of special characters per generated
-						password.
-  --max-caps <num>      The maximum number of capital letters per generated
-						password.
-  --min-caps <num>      The minimum number of capital letters per generated
-						password.
-  --is-offline          Whether or not to configure the LavaPasswordFactory to
-						produce a passwordlist suited for offline attacks
-						(significantly larger than for onlineattacks). Flying
-						this flag enables the offline mode.
-  --min-length <len>    The minimum length for generated passwords.
-  --max-length <len>    The maximum length for generated passwords.
-  --words <word_list>   The list of words used as the seeds for the password
-						generation process,seperated by spaces. For instance,
-						"hello goodbye" would result in ['hello', 'goodbye']
-						as the input words
-  --output-file <file_path>
-						Path to the file that the resulting passwords should
-						be written to.		
+    optional arguments:
+      -h, --help            show this help message and exit
+      --special-chars <chars>
+                            The characters to be considered as 'special
+                            characters' for thepurpose of filtering out ineligible
+                            passwords.
+      --illegal-chars <chars>
+                            Characters that are not allowed in the generated
+                            passwords.
+      --max-special <num>   The maximum number of special characters per generated
+                            password.
+      --min-special <num>   The minimum number of special characters per generated
+                            password.
+      --max-caps <num>      The maximum number of capital letters per generated
+                            password.
+      --min-caps <num>      The minimum number of capital letters per generated
+                            password.
+      --is-offline          Whether or not to configure the LavaPasswordFactory to
+                            produce a passwordlist suited for offline attacks
+                            (significantly larger than for onlineattacks). Flying
+                            this flag enables the offline mode.
+      --min-length <len>    The minimum length for generated passwords.
+      --max-length <len>    The maximum length for generated passwords.
+      --words <word_list>   The list of words used as the seeds for the password
+                            generation process,seperated by spaces. For instance,
+                            "hello goodbye" would result in ['hello', 'goodbye']
+                            as the input words
+      --output-file <file_path>
+                            Path to the file that the resulting passwords should
+                            be written to.      
 
 **Cleaning mode help:**
 
-usage: LavaPasswordFactory.py clean [-h] [--special-chars <chars>]
-									[--illegal-chars <chars>]
-									[--max-special <num>]
-									[--min-special <num>] [--max-caps <num>]
-									[--min-caps <num>] [--min-length <len>]
-									[--max-length <len>] --input-file
-									<file_path> --output-file <file_path>
+    usage: LavaPasswordFactory.py clean [-h] [--special-chars <chars>]
+                                        [--illegal-chars <chars>]
+                                        [--max-special <num>]
+                                        [--min-special <num>] [--max-caps <num>]
+                                        [--min-caps <num>] [--min-length <len>]
+                                        [--max-length <len>] --input-file
+                                        <file_path> --output-file <file_path>
 
-optional arguments:
-  -h, --help            show this help message and exit
-  --special-chars <chars>
-						The characters to be considered as 'special
-						characters' for thepurpose of filtering out ineligible
-						passwords.
-  --illegal-chars <chars>
-						Characters that are not allowed in the generated
-						passwords.
-  --max-special <num>   The maximum number of special characters per generated
-						password.
-  --min-special <num>   The minimum number of special characters per generated
-						password.
-  --max-caps <num>      The maximum number of capital letters per generated
-						password.
-  --min-caps <num>      The minimum number of capital letters per generated
-						password.
-  --min-length <len>    The minimum length for generated passwords.
-  --max-length <len>    The maximum length for generated passwords.
-  --input-file <file_path>
-						Path to the file that the existing password list to
-						clean resides in.
-  --output-file <file_path>
-						Path to the file that the resulting passwords should
-						be written to.
+    optional arguments:
+      -h, --help            show this help message and exit
+      --special-chars <chars>
+                            The characters to be considered as 'special
+                            characters' for thepurpose of filtering out ineligible
+                            passwords.
+      --illegal-chars <chars>
+                            Characters that are not allowed in the generated
+                            passwords.
+      --max-special <num>   The maximum number of special characters per generated
+                            password.
+      --min-special <num>   The minimum number of special characters per generated
+                            password.
+      --max-caps <num>      The maximum number of capital letters per generated
+                            password.
+      --min-caps <num>      The minimum number of capital letters per generated
+                            password.
+      --min-length <len>    The minimum length for generated passwords.
+      --max-length <len>    The maximum length for generated passwords.
+      --input-file <file_path>
+                            Path to the file that the existing password list to
+                            clean resides in.
+      --output-file <file_path>
+                            Path to the file that the resulting passwords should
+                            be written to.
 
 
 **[Future Directions and Features]**
