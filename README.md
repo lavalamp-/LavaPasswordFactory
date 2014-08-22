@@ -1,19 +1,19 @@
-
- ██▓     ▄▄▄       ██▒   █▓ ▄▄▄       ██▓     ▄▄▄       ███▄ ▄███▓ ██▓███
-▓██▒    ▒████▄    ▓██░   █▒▒████▄    ▓██▒    ▒████▄    ▓██▒▀█▀ ██▒▓██░  ██▒
-▒██░    ▒██  ▀█▄   ▓██  █▒░▒██  ▀█▄  ▒██░    ▒██  ▀█▄  ▓██    ▓██░▓██░ ██▓▒
-▒██░    ░██▄▄▄▄██   ▒██ █░░░██▄▄▄▄██ ▒██░    ░██▄▄▄▄██ ▒██    ▒██ ▒██▄█▓▒ ▒
-░██████▒ ▓█   ▓██▒   ▒▀█░   ▓█   ▓██▒░██████▒ ▓█   ▓██▒▒██▒   ░██▒▒██▒ ░  ░
-░ ▒░▓  ░ ▒▒   ▓▒█░   ░ ▐░   ▒▒   ▓▒█░░ ▒░▓  ░ ▒▒   ▓▒█░░ ▒░   ░  ░▒▓▒░ ░  ░
-░ ░ ▒  ░  ▒   ▒▒ ░   ░ ░░    ▒   ▒▒ ░░ ░ ▒  ░  ▒   ▒▒ ░░  ░      ░░▒ ░
-  ░ ░     ░   ▒        ░░    ░   ▒     ░ ░     ░   ▒   ░      ░   ░░
-    ░  ░      ░  ░      ░        ░  ░    ░  ░      ░  ░       ░
-                       ░
+     ██▓     ▄▄▄       ██▒   █▓ ▄▄▄       ██▓     ▄▄▄       ███▄ ▄███▓ ██▓███
+    ▓██▒    ▒████▄    ▓██░   █▒▒████▄    ▓██▒    ▒████▄    ▓██▒▀█▀ ██▒▓██░  ██▒
+    ▒██░    ▒██  ▀█▄   ▓██  █▒░▒██  ▀█▄  ▒██░    ▒██  ▀█▄  ▓██    ▓██░▓██░ ██▓▒
+    ▒██░    ░██▄▄▄▄██   ▒██ █░░░██▄▄▄▄██ ▒██░    ░██▄▄▄▄██ ▒██    ▒██ ▒██▄█▓▒ ▒
+    ░██████▒ ▓█   ▓██▒   ▒▀█░   ▓█   ▓██▒░██████▒ ▓█   ▓██▒▒██▒   ░██▒▒██▒ ░  ░
+    ░ ▒░▓  ░ ▒▒   ▓▒█░   ░ ▐░   ▒▒   ▓▒█░░ ▒░▓  ░ ▒▒   ▓▒█░░ ▒░   ░  ░▒▓▒░ ░  ░
+    ░ ░ ▒  ░  ▒   ▒▒ ░   ░ ░░    ▒   ▒▒ ░░ ░ ▒  ░  ▒   ▒▒ ░░  ░      ░░▒ ░
+      ░ ░     ░   ▒        ░░    ░   ▒     ░ ░     ░   ▒   ░      ░   ░░
+        ░  ░      ░  ░      ░        ░  ░    ░  ░      ░  ░       ░
+                           ░
 
 LavaPasswordFactory is a simple little script for both generating password lists for online and offline attacks as well as cleaning existing password lists based on given password policies. The script can be invoked in one of two modes of operation: generation mode and cleaning mode.
 
 
 **[Generation Mode]**
+========
 
 
 In generation mode the script will first create a password list based on the words passed to the script. The length of the resulting password list is based on a number of factors, but the largest factor is whether or not the --is-offline command line argument is present at invocation. When --is-offline is NOT present, the resulting password list is intended to be used in online attacks, such as brute-forcing a login for a Web application or network service. When --is-offline IS present, the resulting password list is intended to be used to crack hashes in offline fashion. The main difference between these two is that an offline attack does not require going through a third-party to validate passwords, and as such the password list for offline attacks can be much larger. It should be noted that the difference in scale between password lists generated for online versus offline attacks can be order of magnitude, or less than a million versus billions. It follows that the amount of time and storage space required to generate an offline list is much larger than an online list.
