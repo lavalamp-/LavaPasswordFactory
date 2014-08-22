@@ -12,7 +12,7 @@
 LavaPasswordFactory is a simple little script for both generating password lists for online and offline attacks as well as cleaning existing password lists based on given password policies. The script can be invoked in one of two modes of operation: generation mode and cleaning mode.
 
 
-**[Generation Mode]**
+Generation Mode
 ========
 
 
@@ -23,13 +23,15 @@ When generating password lists, the number of words passed to the script should 
 The user has the option of supplying additional parameters at invocation time that map to common password policy restrictions. For instance, passing "--min-length 8" will set a requirement that all returned passwords must be at least eight characters long and passing "--illegal-chars !@#" will ensure that no returned passwords contain the characters !, @, or #. In online mode the password list is generated and stored in memory in its entirety and then cleaned before being written to disk. In offline mode, as each password is generated it is validated against the input set of rules and written to disk before the next password is generated.
 
 
-**[Cleaning Mode]**
+Cleaning Mode
+========
 
 
 In cleaning mode the script will read passwords from an input file, validate those passwords against the input set of rules, and then write all of the valid passwords into the specified output file. This is handy for use with tools such as CeWL (http://digi.ninja/projects/cewl.php) where an effective list may be created, but the resulting list contains many phrases which do not abide by the password policy of whatever the target may be.
 
 
-**[Tool Help]**
+Tool Help
+========
 
 
 **Generic help:**
@@ -131,7 +133,26 @@ In cleaning mode the script will read passwords from an input file, validate tho
                             be written to.
 
 
-**[Future Directions and Features]**
+Examples
+========
+
+
+Create a password list for use in **online** mode based on the words "hello" and "world". The resulting password list should only contain passwords that have at least one capital letter, at least one special character, are between eight and twelve characters long, and do not include that characters (, ), or %. The resulting passwords will be written to /tmp/test.txt.
+
+    python LavaPasswordFactory.py generate --words "hello world" --min-caps 1 --min-special 1 --min-length 8 --max-length 12 --illegal-chars "()%" --output-file /tmp/test.txt
+
+Create a password list for use in **offline** mode based on the words "hello" and "world". The resulting password list should only contain passwords that have at least one capital letter, at least one special character, are between eight and twelve characters long, and do not include that characters (, ), or %. The resulting passwords will be written to /tmp/test.txt.
+
+    python LavaPasswordFactory.py generate --is-offline --words "hello world" --min-caps 1 --min-special 1 --min-length 8 --max-length 12 --illegal-chars "()%" --output-file /tmp/test.txt
+
+Clean the list of passwords found in /tmp/pass.txt of all passwords that are not at least eight characters long, do not contain at least two capital letters, and do not contain at least two special characters. The resulting password list will be written to /tmp/clean.txt.
+
+    python LavaPasswordFactory.py clean --input-file /tmp/pass.txt --output-file /tmp/clean.txt --min-length 8 --min-caps 2 --min-special 2
+
+
+Future Directions and Features
+========
 
 
 - Add a mode that 1337-speaks all words within an input file
+- Take care of the TODOs in the file
