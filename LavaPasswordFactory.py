@@ -506,6 +506,10 @@ class LavaPasswordFactory(object):
         'PASS',
         'Pass',
         'PaSs',
+        'admin',
+        'Admin',
+        'secret',
+        'Secret'
     ]
 
     def __init__(
@@ -1074,13 +1078,13 @@ def main():
 
 def parse_arguments():
     parser = argparse.ArgumentParser(
-        description="LavaPasswordFactory - for all your password list"
+        description="LavaPasswordFactory - for all your password list creation needs."
     )
     subparsers = parser.add_subparsers(help='sub-command help')
     parser.add_argument(
         "--log-level",
         required=False,
-        help="The log message level to receive when running the script. Valid"
+        help="The log message level to receive when running the script. Valid "
             "values are DEBUG, INFO, WARNING, ERROR, CRITICAL.",
         action="store",
         dest="log_level",
@@ -1092,7 +1096,7 @@ def parse_arguments():
     generator_parser.add_argument(
         "--special-chars",
         required=False,
-        help="The characters to be considered as 'special characters' for the"
+        help="The characters to be considered as 'special characters' for the "
             "purpose of filtering out ineligible passwords.",
         action="store",
         dest="special_chars",
@@ -1153,8 +1157,8 @@ def parse_arguments():
     generator_parser.add_argument(
         "--is-offline",
         required=False,
-        help="Whether or not to configure the LavaPasswordFactory to produce a password"
-            "list suited for offline attacks (significantly larger than for online"
+        help="Whether or not to configure the LavaPasswordFactory to produce a password "
+            "list suited for offline attacks (significantly larger than for online "
             "attacks). Flying this flag enables the offline mode.",
         action="store_true",
         default=False,
@@ -1183,7 +1187,7 @@ def parse_arguments():
     generator_parser.add_argument(
         "--words",
         required=True,
-        help="The list of words used as the seeds for the password generation process,"
+        help="The list of words used as the seeds for the password generation process, "
             "seperated by spaces. For instance, \"hello goodbye\" would result in "
             "['hello', 'goodbye'] as the input words",
         action="store",
@@ -1204,7 +1208,7 @@ def parse_arguments():
     cleaner_parser.add_argument(
         "--special-chars",
         required=False,
-        help="The characters to be considered as 'special characters' for the"
+        help="The characters to be considered as 'special characters' for the "
             "purpose of filtering out ineligible passwords.",
         action="store",
         dest="special_chars",
@@ -1320,6 +1324,7 @@ logger = logging.getLogger("LavaPasswordFactory")
 if __name__ == '__main__':
     main()
 
+#TODO Create better list based off of input word, and restrict input to a single word
 #TODO Do sort+uniq for the offline lists after list creation completes
 #TODO Configurable interval for cleaning reporting
 #TODO Configurable interval for offline list reporting
